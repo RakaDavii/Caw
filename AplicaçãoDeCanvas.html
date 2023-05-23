@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		
+		<script type = "text/javascript">
+		
+		//function DesenhaQuadrado(cv,ctx)
+		//{
+		//x = parseInt(cv.width); y = parseInt(cv.height);
+		//x-=40; y-=40;
+		//lado = Math.floor(Math.random()*40);
+		//x = Math.floor(Math.random()*x); y = Math.floor(Math.random()*y);
+		//ctx.strokeRect(x, y, lado, lado);
+		//return;
+		//}
+		
+		function DesenhaQuadrado(cv,ctx){
+		x = parseInt(cv.width);
+		y = parseInt(cv.height);
+		ctx.clearRect(0,0,x,y);
+		x-=40;
+		y-=40;
+	
+		lado = Math.floor(Math.random()*40);
+		x = Math.floor(Math.random()*x); y = Math.floor(Math.random()*y);
+		ctx.strokeRect(x, y, lado, lado);
+		return; }
+		
+		function Iniciar(){
+		var cv = document.getElementById("canvas1");
+		var ctx = cv.getContext("2d");
+		DesenhaQuadrado(cv,ctx);
+		DesenhaQuadrado(cv,ctx);
+		return; }
+				
+		</script>	
+	
+		<style>
+			canvas {border: solid 2px red;}
+		</style>
+	</head>
+	
+	<body> <!-- quando a página é carregada -->
+		<canvas id="canvas1" width="480px" height="300px" style="border:1px solid black"></canvas>
+		
+			<button onclick="Iniciar();">Click Aqui</button>
+		
+		<script type="text/javascript">
+			var cv = document.getElementById("meuCanvas");
+			var ctx = cv.getContext("2d");
+			DesenhaQuadrado(cv,ctx);
+			DesenhaQuadrado(cv,ctx);
+		</script>
+	</body>
+</html>
